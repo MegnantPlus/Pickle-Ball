@@ -1,7 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://by2523p4ivtvd"]
+[gd_scene load_steps=10 format=3 uid="uid://by2523p4ivtvd"]
 
 [ext_resource type="Script" uid="uid://cbgtapgaqwkpv" path="res://PLayer/player.gd" id="1_es3rg"]
-[ext_resource type="Texture2D" uid="uid://crukolcn66k4o" path="res://brackeys_platformer_assets/sprites/knight.png" id="1_f7qy4"]
+[ext_resource type="Texture2D" uid="uid://d148pi5rptwih" path="res://brackeys_platformer_assets/sprites/knight.png" id="1_f7qy4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_es3rg"]
 atlas = ExtResource("1_f7qy4")
@@ -43,15 +43,22 @@ animations = [{
 radius = 4.0
 height = 16.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_es3rg"]
+
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_es3rg")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedCharacter" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ekdex")
 autoplay = "default"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CharacterRange" type="CollisionShape2D" parent="."]
 light_mask = 128
 visibility_layer = 128
 position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_fqxa7")
+
+[node name="HitBox" type="Area2D" parent="."]
+
+[node name="HitBoxRange" type="CollisionShape2D" parent="HitBox"]
+shape = SubResource("CapsuleShape2D_es3rg")
