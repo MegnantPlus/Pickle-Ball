@@ -1,5 +1,5 @@
 extends CharacterBody2D
-@onready var animate: AnimatedSprite2D = $AnimatedSprite2D
+@onready var animate: AnimatedSprite2D = $AnimatedCharacter
 
 const SPEED = 500.0
 const JUMP_VELOCITY = -400.0
@@ -9,7 +9,7 @@ const DASH_DURATION = 0.15  # THÊM: Thời gian dash
 var is_dashing = false  # THÊM: Trạng thái dash
 var can_dash = true  # THÊM: Có thể dash hay không
 
-func _physics_process(_delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	move()
 	move_and_slide()
 	
@@ -17,7 +17,7 @@ func _physics_process(_delta: float) -> void:
 func move():
 	var input_direction = Vector2.ZERO
 	if Input.is_action_pressed("left"):
-		input_direction.x -= 1
+		input_direction.x -= 1		
 		animate.flip_h = true
 	if Input.is_action_pressed("right"):
 		input_direction.x += 1

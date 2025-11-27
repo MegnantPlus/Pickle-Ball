@@ -1,7 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://ppvsylrn503a"]
+[gd_scene load_steps=18 format=3 uid="uid://ppvsylrn503a"]
 
 [ext_resource type="Script" uid="uid://b8f2uj113euuy" path="res://SlimeBall/slime_ball.gd" id="1_5m0xn"]
 [ext_resource type="Texture2D" uid="uid://3imbhwhf7h4d" path="res://brackeys_platformer_assets/sprites/slime_purple.png" id="1_epfyx"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5m0xn"]
+friction = 0.5
+bounce = 0.8
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_quv0n"]
 atlas = ExtResource("1_epfyx")
@@ -95,10 +99,13 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_5m0xn"]
-radius = 17.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5m0xn"]
 
 [node name="SlimeBall" type="RigidBody2D"]
+light_mask = 17
+visibility_layer = 16
+physics_material_override = SubResource("PhysicsMaterial_5m0xn")
+continuous_cd = 1
 script = ExtResource("1_5m0xn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -107,7 +114,5 @@ sprite_frames = SubResource("SpriteFrames_65goc")
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-light_mask = 16
-visibility_layer = 16
 scale = Vector2(2, 2)
-shape = SubResource("CircleShape2D_5m0xn")
+shape = SubResource("RectangleShape2D_5m0xn")

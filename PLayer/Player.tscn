@@ -43,9 +43,12 @@ animations = [{
 radius = 4.0
 height = 16.0
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_es3rg"]
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_es3rg"]
+a = Vector2(-14, -8)
+b = Vector2(13, -8)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+safe_margin = 0.1
 script = ExtResource("1_es3rg")
 
 [node name="AnimatedCharacter" type="AnimatedSprite2D" parent="."]
@@ -53,12 +56,10 @@ sprite_frames = SubResource("SpriteFrames_ekdex")
 autoplay = "default"
 
 [node name="CharacterRange" type="CollisionShape2D" parent="."]
-light_mask = 128
-visibility_layer = 128
 position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_fqxa7")
 
 [node name="HitBox" type="Area2D" parent="."]
 
 [node name="HitBoxRange" type="CollisionShape2D" parent="HitBox"]
-shape = SubResource("CapsuleShape2D_es3rg")
+shape = SubResource("SegmentShape2D_es3rg")
