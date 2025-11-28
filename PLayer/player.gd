@@ -1,16 +1,24 @@
 extends CharacterBody2D
 @onready var animate: AnimatedSprite2D = $AnimatedCharacter
+@onready var hit_box: Area2D = $HitBox 
 
 const SPEED = 500.0
 const JUMP_VELOCITY = -400.0
-const DASH_SPEED = 1000.0  # THÊM: Tốc độ dash
-const DASH_DURATION = 0.15  # THÊM: Thời gian dash
+const DASH_SPEED = 1000.0
+const DASH_DURATION = 0.15
+const HIT_FORCE = 10000.0 # Lực đánh bóng
 
-var is_dashing = false  # THÊM: Trạng thái dash
-var can_dash = true  # THÊM: Có thể dash hay không
+var is_dashing = false
+var can_dash = true
 
-func _physics_process(delta: float) -> void:
+# Biến lưu trữ quả bóng hiện tại đang nằm trong tầm đánh
+var ball_in_range: RigidBody2D = null
+func _ready() -> void:
+	pass
+
+func _physics_process(_delta: float) -> void:
 	move()
+	handle_hit_input()
 	move_and_slide()
 	
 	
@@ -47,9 +55,35 @@ func start_dash():
 	get_tree().create_timer(DASH_DURATION).timeout.connect(_on_dash_timeout)
 	# Timer cooldown dash
 	get_tree().create_timer(0.5).timeout.connect(_on_dash_cooldown_timeout)
+func handle_hit_input():
+	# Chỉ đánh khi bấm J (action "hit") VÀ có bóng trong tầm
+	if Input.is_action_just_pressed("hit") and ball_in_range != null:
+		print("Đánh trúng bóng!") # Debug log
+		
+		# Tính hướng đánh: Từ người chơi -> Bóng
+		var direction = (ball_in_range.global_position - global_position).normalized()
+		
+		# Đẩy bóng đi (Gọi trực tiếp apply_impulse vì ball là RigidBody2D)
+		ball_in_range.apply_central_impulse(direction * HIT_FORCE)
+
 
 func _on_dash_timeout():
 	is_dashing = false
 
 func _on_dash_cooldown_timeout():
 	can_dash = true
+
+
+func _on_hit_box_body_entered(body: Node2D) -> void:
+# "The Godot Way": Kiểm tra bằng Group
+	# Dễ đọc hơn nhiều so với check layer bitmask
+	if body.is_in_group("ball"): 
+		ball_in_range = body
+		print("Bóng (Group 'ball') đã vào tầm đánh!")
+
+
+func _on_hit_box_body_exited(body: Node2D) -> void:
+# Cũng kiểm tra group hoặc so sánh trực tiếp
+	if body == ball_in_range:
+		ball_in_range = null
+		print("Bóng đã rời đi!")

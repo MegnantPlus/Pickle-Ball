@@ -101,10 +101,13 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5m0xn"]
 
-[node name="SlimeBall" type="RigidBody2D"]
+[node name="SlimeBall" type="RigidBody2D" groups=["ball"]]
 light_mask = 17
 visibility_layer = 16
+collision_layer = 3
 physics_material_override = SubResource("PhysicsMaterial_5m0xn")
+gravity_scale = 0.0
+lock_rotation = true
 continuous_cd = 1
 script = ExtResource("1_5m0xn")
 
@@ -114,5 +117,7 @@ sprite_frames = SubResource("SpriteFrames_65goc")
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 3
+visibility_layer = 3
 scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_5m0xn")
