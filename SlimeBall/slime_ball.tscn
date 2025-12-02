@@ -9,31 +9,31 @@ bounce = 1.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5m0xn"]
 atlas = ExtResource("2_5m0xn")
-region = Rect2(0, 0, 70, 70)
+region = Rect2(32, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_quv0n"]
 atlas = ExtResource("2_5m0xn")
-region = Rect2(70, 0, 70, 70)
+region = Rect2(96, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6ysek"]
 atlas = ExtResource("2_5m0xn")
-region = Rect2(140, 0, 70, 70)
+region = Rect2(160, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y3dhm"]
 atlas = ExtResource("2_5m0xn")
-region = Rect2(210, 0, 70, 70)
+region = Rect2(224, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1xcqy"]
 atlas = ExtResource("2_5m0xn")
-region = Rect2(280, 0, 70, 70)
+region = Rect2(288, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m4lm4"]
 atlas = ExtResource("2_5m0xn")
-region = Rect2(350, 0, 70, 70)
+region = Rect2(352, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kpet6"]
 atlas = ExtResource("2_5m0xn")
-region = Rect2(420, 0, 70, 70)
+region = Rect2(416, 32, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_65goc"]
 animations = [{
@@ -77,7 +77,6 @@ continuous_cd = 1
 script = ExtResource("1_5m0xn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(40, 0)
 rotation = 1.5707964
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_65goc")
