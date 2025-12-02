@@ -1,59 +1,39 @@
-[gd_scene load_steps=18 format=3 uid="uid://ppvsylrn503a"]
+[gd_scene load_steps=13 format=3 uid="uid://ppvsylrn503a"]
 
 [ext_resource type="Script" uid="uid://b8f2uj113euuy" path="res://SlimeBall/slime_ball.gd" id="1_5m0xn"]
-[ext_resource type="Texture2D" uid="uid://3imbhwhf7h4d" path="res://brackeys_platformer_assets/sprites/slime_purple.png" id="1_epfyx"]
+[ext_resource type="Texture2D" uid="uid://405dvjwb0pt4" path="res://game material/Ballzz.png" id="2_5m0xn"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5m0xn"]
-friction = 0.5
-bounce = 0.8
+friction = 0.0
+bounce = 1.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_quv0n"]
-atlas = ExtResource("1_epfyx")
-region = Rect2(0, 0, 24, 24)
+atlas = ExtResource("2_5m0xn")
+region = Rect2(0, 0, 64, 65)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6ysek"]
-atlas = ExtResource("1_epfyx")
-region = Rect2(24, 0, 24, 24)
+atlas = ExtResource("2_5m0xn")
+region = Rect2(64, 0, 64, 65)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y3dhm"]
-atlas = ExtResource("1_epfyx")
-region = Rect2(48, 0, 24, 24)
+atlas = ExtResource("2_5m0xn")
+region = Rect2(128, 0, 64, 65)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1xcqy"]
-atlas = ExtResource("1_epfyx")
-region = Rect2(72, 0, 24, 24)
+atlas = ExtResource("2_5m0xn")
+region = Rect2(192, 0, 64, 65)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m4lm4"]
-atlas = ExtResource("1_epfyx")
-region = Rect2(0, 24, 24, 24)
+atlas = ExtResource("2_5m0xn")
+region = Rect2(256, 0, 64, 65)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kpet6"]
-atlas = ExtResource("1_epfyx")
-region = Rect2(24, 24, 24, 24)
+atlas = ExtResource("2_5m0xn")
+region = Rect2(320, 0, 64, 65)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hg3tk"]
-atlas = ExtResource("1_epfyx")
-region = Rect2(48, 24, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8hb7b"]
-atlas = ExtResource("1_epfyx")
-region = Rect2(72, 24, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_b51st"]
-atlas = ExtResource("1_epfyx")
-region = Rect2(0, 48, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_o40r5"]
-atlas = ExtResource("1_epfyx")
-region = Rect2(24, 48, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8sy4u"]
-atlas = ExtResource("1_epfyx")
-region = Rect2(48, 48, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_q4wux"]
-atlas = ExtResource("1_epfyx")
-region = Rect2(72, 48, 24, 24)
+atlas = ExtResource("2_5m0xn")
+region = Rect2(384, 0, 64, 65)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_65goc"]
 animations = [{
@@ -78,21 +58,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_hg3tk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8hb7b")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_b51st")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_o40r5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8sy4u")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_q4wux")
 }],
 "loop": true,
 "name": &"default",
@@ -115,9 +80,10 @@ script = ExtResource("1_5m0xn")
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_65goc")
 autoplay = "default"
+frame_progress = 0.063292615
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 3
 visibility_layer = 3
-scale = Vector2(2, 2)
+scale = Vector2(5, 5)
 shape = SubResource("RectangleShape2D_5m0xn")

@@ -1,16 +1,13 @@
 extends RigidBody2D
 
-@onready var slime_ball: RigidBody2D = $"."
-var max_speed = 300.0
-# Called when the node enters the scene tree for the first time.
+
+@export var constant_speed: float = 500.0
+
 func _ready() -> void:
 	pass
 
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta: float) -> void:
-	if linear_velocity.length() > max_speed:
-		linear_velocity = linear_velocity.normalized() * max_speed
-func hit(direction: Vector2, force: float) -> void:
-	apply_central_impulse(direction * force)
+func _physics_process(_delta: float) -> void:
+	if linear_velocity.length_squared() > 0:
+		linear_velocity = linear_velocity.normalized() * constant_speed
+func set_ball_direction(direction: Vector2) -> void:
+	linear_velocity = direction.normalized() * constant_speed

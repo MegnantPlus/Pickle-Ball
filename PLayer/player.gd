@@ -2,11 +2,12 @@ extends CharacterBody2D
 @onready var animate: AnimatedSprite2D = $AnimatedCharacter
 @onready var hit_box: Area2D = $HitBox 
 
+
 const SPEED = 500.0
 const JUMP_VELOCITY = -400.0
 const DASH_SPEED = 1000.0
 const DASH_DURATION = 0.15
-const HIT_FORCE = 10000.0 # Lực đánh bóng
+
 
 var is_dashing = false
 var can_dash = true
@@ -56,15 +57,19 @@ func start_dash():
 	# Timer cooldown dash
 	get_tree().create_timer(0.5).timeout.connect(_on_dash_cooldown_timeout)
 func handle_hit_input():
-	# Chỉ đánh khi bấm J (action "hit") VÀ có bóng trong tầm
+	# Chỉ đánh khi bấm J và có bóng
 	if Input.is_action_just_pressed("hit") and ball_in_range != null:
-		print("Đánh trúng bóng!") # Debug log
+		print("Smash!")
 		
-		# Tính hướng đánh: Từ người chơi -> Bóng
+		# 1. Tính hướng đánh (Logic cũ của bạn vẫn ổn)
+		# Hoặc nâng cấp lên logic hướng chuột/phím di chuyển như bài trước tôi dạy
 		var direction = (ball_in_range.global_position - global_position).normalized()
 		
-		# Đẩy bóng đi (Gọi trực tiếp apply_impulse vì ball là RigidBody2D)
-		ball_in_range.apply_central_impulse(direction * HIT_FORCE)
+		# 2. GỌI HÀM MỚI BÊN BALL
+		# Thay vì apply_impulse, ta gọi hàm set direction
+		# Kiểm tra để tránh lỗi crash nếu ball_in_range không có hàm đó
+		if ball_in_range.has_method("set_ball_direction"):
+			ball_in_range.set_ball_direction(direction)
 
 
 func _on_dash_timeout():
