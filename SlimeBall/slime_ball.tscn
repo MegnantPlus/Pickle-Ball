@@ -7,37 +7,40 @@
 friction = 0.0
 bounce = 1.0
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_5m0xn"]
+atlas = ExtResource("2_5m0xn")
+region = Rect2(0, 0, 70, 70)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_quv0n"]
 atlas = ExtResource("2_5m0xn")
-region = Rect2(0, 0, 64, 65)
+region = Rect2(70, 0, 70, 70)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6ysek"]
 atlas = ExtResource("2_5m0xn")
-region = Rect2(64, 0, 64, 65)
+region = Rect2(140, 0, 70, 70)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y3dhm"]
 atlas = ExtResource("2_5m0xn")
-region = Rect2(128, 0, 64, 65)
+region = Rect2(210, 0, 70, 70)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1xcqy"]
 atlas = ExtResource("2_5m0xn")
-region = Rect2(192, 0, 64, 65)
+region = Rect2(280, 0, 70, 70)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m4lm4"]
 atlas = ExtResource("2_5m0xn")
-region = Rect2(256, 0, 64, 65)
+region = Rect2(350, 0, 70, 70)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kpet6"]
 atlas = ExtResource("2_5m0xn")
-region = Rect2(320, 0, 64, 65)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hg3tk"]
-atlas = ExtResource("2_5m0xn")
-region = Rect2(384, 0, 64, 65)
+region = Rect2(420, 0, 70, 70)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_65goc"]
 animations = [{
 "frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5m0xn")
+}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_quv0n")
 }, {
@@ -55,9 +58,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kpet6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hg3tk")
 }],
 "loop": true,
 "name": &"default",
@@ -77,10 +77,12 @@ continuous_cd = 1
 script = ExtResource("1_5m0xn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(40, 0)
+rotation = 1.5707964
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_65goc")
 autoplay = "default"
-frame_progress = 0.063292615
+frame_progress = 0.64094186
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 3
