@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=4 uid="uid://dgrrdyskgmec8"]
+[gd_scene load_steps=9 format=4 uid="uid://dgrrdyskgmec8"]
 
 [ext_resource type="Texture2D" uid="uid://clyphabmctkq" path="res://brackeys_platformer_assets/sprites/world_tileset.png" id="1_gvoxm"]
 [ext_resource type="Script" uid="uid://b26mowhmmq2up" path="res://Map/map_demo.gd" id="1_nit0h"]
 [ext_resource type="PackedScene" uid="uid://by2523p4ivtvd" path="res://PLayer/Player.tscn" id="2_o24m5"]
 [ext_resource type="Texture2D" uid="uid://bkc8k5c7uelv4" path="res://game material/Platform.png" id="2_vm5od"]
 [ext_resource type="PackedScene" uid="uid://ppvsylrn503a" path="res://SlimeBall/slime_ball.tscn" id="3_7yced"]
+[ext_resource type="PackedScene" uid="uid://jm8v8fpxvdkf" path="res://Components/aim_point.tscn" id="6_cwx86"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o24m5"]
 texture = ExtResource("1_gvoxm")
@@ -193,9 +194,9 @@ collision_layer = 128
 collision_mask = 128
 
 [node name="SlimeBall" parent="." instance=ExtResource("3_7yced")]
-position = Vector2(319, 393)
+position = Vector2(310, 306)
 collision_layer = 10
 collision_mask = 10
 
-[node name="AimTarget" type="Marker2D" parent="." groups=["aim_target"]]
-position = Vector2(638, 55)
+[node name="AimPoint" parent="." instance=ExtResource("6_cwx86")]
+position = Vector2(587, 86)
