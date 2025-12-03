@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ppvsylrn503a"]
+[gd_scene load_steps=9 format=3 uid="uid://ppvsylrn503a"]
 
 [ext_resource type="Script" uid="uid://b8f2uj113euuy" path="res://SlimeBall/slime_ball.gd" id="1_5m0xn"]
 [ext_resource type="Texture2D" uid="uid://405dvjwb0pt4" path="res://game material/Ballzz.png" id="2_5m0xn"]
@@ -6,22 +6,6 @@
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5m0xn"]
 friction = 0.0
 bounce = 1.0
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5m0xn"]
-atlas = ExtResource("2_5m0xn")
-region = Rect2(32, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_quv0n"]
-atlas = ExtResource("2_5m0xn")
-region = Rect2(96, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6ysek"]
-atlas = ExtResource("2_5m0xn")
-region = Rect2(160, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_y3dhm"]
-atlas = ExtResource("2_5m0xn")
-region = Rect2(224, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1xcqy"]
 atlas = ExtResource("2_5m0xn")
@@ -38,18 +22,6 @@ region = Rect2(416, 32, 32, 32)
 [sub_resource type="SpriteFrames" id="SpriteFrames_65goc"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5m0xn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_quv0n")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6ysek")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_y3dhm")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_1xcqy")
 }, {
@@ -80,7 +52,7 @@ script = ExtResource("1_5m0xn")
 rotation = 1.5707964
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_65goc")
-frame_progress = 0.64094186
+frame_progress = 0.6496022
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 3

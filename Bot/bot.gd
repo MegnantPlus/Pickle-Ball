@@ -16,7 +16,7 @@ const DASH_COOLDOWN = 2.0  # Hồi chiêu (Bot không được spam liên tục)
 # Khoảng cách để Bot quyết định Dash
 # Nếu bóng xa hơn 150px thì mới Dash
 @export var dash_trigger_distance: float = 150.0 
-@export var aim_variance: float = 900.0
+@export var aim_variance: float = 300.0
 # Thời gian đứng im ngắm nghía sau khi đánh (0.5 giây)
 var recovery_timer: float = 0.0
 const RECOVERY_DURATION: float = 0.2

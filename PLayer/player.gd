@@ -2,7 +2,7 @@ extends CharacterBody2D
 @onready var animate: AnimatedSprite2D = $AnimatedCharacter
 @onready var hit_box: Area2D = $HitBox 
 @export var steer_influence: float = 1.0
-
+@export var aim_width: float = 300.0
 const SPEED = 500.0
 const JUMP_VELOCITY = -400.0
 const DASH_SPEED = 2000.0
@@ -61,36 +61,36 @@ func start_dash():
 	# Timer cooldown dash
 	get_tree().create_timer(0.5).timeout.connect(_on_dash_cooldown_timeout)
 func handle_hit_input():
-	# Bước 2B: Logic đánh bóng mới
 	if Input.is_action_just_pressed("hit") and ball_in_range != null:
-		print("Smash!")
+		print("Player Smash!")
 		
-		# 1. Xác định Đích đến (Vị trí của AimPoint)
-		var target_pos = Vector2.ZERO
+		# 1. Lấy vị trí Gốc (Tâm hồng tâm)
+		var base_target_pos = Vector2.ZERO
 		if aim_marker != null:
-			target_pos = aim_marker.global_position
+			base_target_pos = aim_marker.global_position
 		else:
-			# Fallback: Nếu lỡ quên đặt AimPoint thì đánh thẳng lên trên
-			target_pos = ball_in_range.global_position + Vector2(0, -500)
-			
-		# 2. Tính Vector Cơ Bản (Từ Bóng -> Đích AimPoint)
-		var base_direction = (target_pos - ball_in_range.global_position).normalized()
+			# Fallback: Đánh thẳng lên trên (-Y)
+			base_target_pos = ball_in_range.global_position + Vector2(0, -500)
 		
-		# 3. Tính Vector Phím Bấm (Người chơi muốn bẻ lái đi đâu?)
-		var input_steer = Vector2.ZERO
-		if Input.is_action_pressed("left"): input_steer.x -= 1
-		if Input.is_action_pressed("right"): input_steer.x += 1
-		# Nếu muốn chỉnh độ cao thấp bóng thì thêm up/down, còn không thì thôi
+		# 2. Xử lý Input (Trái/Phải)
+		# Input.get_axis trả về: -1 (Trái), 1 (Phải), 0 (Không bấm)
+		var input_axis = Input.get_axis("left", "right")
 		
-		# 4. TRỘN HAI VECTOR (Phần quan trọng nhất)
-		# Công thức: Hướng cuối = Hướng về đích + (Hướng phím * Độ ảnh hưởng)
-		var final_direction = (base_direction + (input_steer * steer_influence)).normalized()
+		# Nếu bạn muốn hỗ trợ Analog (tay cầm) để đánh góc 50% thì giữ nguyên
+		# Nếu muốn bàn phím nhạy hơn, có thể giữ nguyên vì get_axis đã xử lý rồi
 		
-		# 5. Ra lệnh cho bóng
-		# (Đảm bảo bên slime_ball.gd bạn đã có hàm set_ball_direction như bài trước)
+		# 3. TÍNH TOÁN ĐIỂM ĐÍCH THỰC TẾ (Target Offset)
+		# Đích cuối = Đích gốc + (Hướng bấm * Độ rộng sân)
+		# Ví dụ: Bấm Trái (-1) * 250 = Dịch sang trái 250px
+		var offset_vector = Vector2(input_axis * aim_width, 0)
+		var final_target_pos = base_target_pos + offset_vector
+		
+		# 4. Tính hướng đánh (Từ bóng -> Đích cuối)
+		var hit_direction = (final_target_pos - ball_in_range.global_position).normalized()
+		
+		# 5. Thực thi
 		if ball_in_range.has_method("set_ball_direction"):
-			ball_in_range.set_ball_direction(final_direction)
-
+			ball_in_range.set_ball_direction(hit_direction)
 
 func _on_dash_timeout():
 	is_dashing = false
