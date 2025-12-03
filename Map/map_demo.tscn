@@ -209,24 +209,24 @@ scale = Vector2(0.5, 0.9)
 texture = ExtResource("4_nbr5u")
 
 [node name="Player" parent="." instance=ExtResource("2_o24m5")]
-position = Vector2(43, 309)
+position = Vector2(46, 277)
 scale = Vector2(4, 4)
 collision_layer = 128
 collision_mask = 128
 
 [node name="SlimeBall" parent="." instance=ExtResource("3_7yced")]
-position = Vector2(109, 138)
+position = Vector2(34, 146)
 collision_layer = 10
 collision_mask = 10
 
 [node name="AimPoint_ForPlayer" parent="." groups=["p1_aim"] instance=ExtResource("6_cwx86")]
 position = Vector2(-6, -298)
 
+[node name="AimPoint_ForBot" parent="." groups=["bot_aim"] instance=ExtResource("6_cwx86")]
+position = Vector2(10, 274)
+
 [node name="Bot" parent="." instance=ExtResource("7_sg2dq")]
 position = Vector2(-237, -301)
 scale = Vector2(3, 3)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-
-[node name="AimPoint_ForBot" parent="." groups=["bot_aim"] instance=ExtResource("6_cwx86")]
-position = Vector2(10, 274)
