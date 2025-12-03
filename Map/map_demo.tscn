@@ -200,13 +200,13 @@ pivot_offset = Vector2(0, 0.5)
 texture = ExtResource("2_vm5od")
 
 [node name="Player" parent="." instance=ExtResource("2_o24m5")]
-position = Vector2(-17, 237)
+position = Vector2(594, 318)
 scale = Vector2(4, 4)
 collision_layer = 128
 collision_mask = 128
 
 [node name="SlimeBall" parent="." instance=ExtResource("3_7yced")]
-position = Vector2(1, -133)
+position = Vector2(580, 216)
 collision_layer = 10
 collision_mask = 10
 
@@ -214,7 +214,7 @@ collision_mask = 10
 position = Vector2(-6, -298)
 
 [node name="Bot" parent="." instance=ExtResource("7_sg2dq")]
-position = Vector2(210.00003, -280)
+position = Vector2(-585, -304)
 scale = Vector2(3, 3)
 
 [node name="Camera2D" type="Camera2D" parent="."]
