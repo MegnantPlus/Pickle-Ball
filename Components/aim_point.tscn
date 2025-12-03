@@ -94,7 +94,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="AimPoint" type="Marker2D" groups=["p1_aim"]]
+[node name="AimPoint" type="Marker2D"]
 
 [node name="Coin" type="AnimatedSprite2D" parent="."]
 scale = Vector2(3, 3)
