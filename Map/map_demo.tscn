@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=4 uid="uid://dgrrdyskgmec8"]
+[gd_scene load_steps=11 format=4 uid="uid://dgrrdyskgmec8"]
 
 [ext_resource type="Texture2D" uid="uid://clyphabmctkq" path="res://brackeys_platformer_assets/sprites/world_tileset.png" id="1_gvoxm"]
 [ext_resource type="Script" uid="uid://b26mowhmmq2up" path="res://Map/map_demo.gd" id="1_nit0h"]
 [ext_resource type="PackedScene" uid="uid://by2523p4ivtvd" path="res://PLayer/Player.tscn" id="2_o24m5"]
 [ext_resource type="Texture2D" uid="uid://bkc8k5c7uelv4" path="res://game material/Platform.png" id="2_vm5od"]
 [ext_resource type="PackedScene" uid="uid://ppvsylrn503a" path="res://SlimeBall/slime_ball.tscn" id="3_7yced"]
+[ext_resource type="Texture2D" uid="uid://byen65akhcqsh" path="res://game material/Nest.png" id="4_nbr5u"]
 [ext_resource type="PackedScene" uid="uid://jm8v8fpxvdkf" path="res://Components/aim_point.tscn" id="6_cwx86"]
 [ext_resource type="PackedScene" uid="uid://h8tr7650sg0b" path="res://Bot/Bot.tscn" id="7_sg2dq"]
 
@@ -198,6 +199,13 @@ grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(0, 0.5)
 texture = ExtResource("2_vm5od")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+offset_left = -639.0
+offset_top = -83.0
+offset_right = 642.0
+offset_bottom = 45.0
+texture = ExtResource("4_nbr5u")
 
 [node name="Player" parent="." instance=ExtResource("2_o24m5")]
 position = Vector2(594, 318)
