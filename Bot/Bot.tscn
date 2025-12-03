@@ -1,38 +1,66 @@
-[gd_scene load_steps=10 format=3 uid="uid://h8tr7650sg0b"]
+[gd_scene load_steps=14 format=3 uid="uid://h8tr7650sg0b"]
 
 [ext_resource type="Script" uid="uid://dh4aggmsvnqpm" path="res://Bot/bot.gd" id="1_q33ou"]
-[ext_resource type="Texture2D" uid="uid://d148pi5rptwih" path="res://brackeys_platformer_assets/sprites/knight.png" id="2_8ov8i"]
+[ext_resource type="Texture2D" uid="uid://btkm3kcqo4pqu" path="res://game material/Move.png" id="2_q33ou"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_es3rg"]
-atlas = ExtResource("2_8ov8i")
-region = Rect2(0, 0, 32, 36)
+[sub_resource type="AtlasTexture" id="AtlasTexture_74tqk"]
+atlas = ExtResource("2_q33ou")
+region = Rect2(32, 32, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_r7dv7"]
-atlas = ExtResource("2_8ov8i")
-region = Rect2(32, 0, 32, 36)
+[sub_resource type="AtlasTexture" id="AtlasTexture_u4bbq"]
+atlas = ExtResource("2_q33ou")
+region = Rect2(96, 32, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_v5xjs"]
-atlas = ExtResource("2_8ov8i")
-region = Rect2(64, 0, 32, 36)
+[sub_resource type="AtlasTexture" id="AtlasTexture_ghja7"]
+atlas = ExtResource("2_q33ou")
+region = Rect2(160, 32, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gfho4"]
-atlas = ExtResource("2_8ov8i")
-region = Rect2(96, 0, 32, 36)
+[sub_resource type="AtlasTexture" id="AtlasTexture_2gwci"]
+atlas = ExtResource("2_q33ou")
+region = Rect2(224, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5n2sd"]
+atlas = ExtResource("2_q33ou")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w522v"]
+atlas = ExtResource("2_q33ou")
+region = Rect2(96, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xhnss"]
+atlas = ExtResource("2_q33ou")
+region = Rect2(160, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y5yk1"]
+atlas = ExtResource("2_q33ou")
+region = Rect2(224, 96, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ekdex"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_es3rg")
+"texture": SubResource("AtlasTexture_74tqk")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_r7dv7")
+"texture": SubResource("AtlasTexture_u4bbq")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_v5xjs")
+"texture": SubResource("AtlasTexture_ghja7")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_gfho4")
+"texture": SubResource("AtlasTexture_2gwci")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5n2sd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w522v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xhnss")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y5yk1")
 }],
 "loop": true,
 "name": &"default",
@@ -51,7 +79,6 @@ safe_margin = 0.1
 script = ExtResource("1_q33ou")
 
 [node name="AnimatedCharacter" type="AnimatedSprite2D" parent="."]
-modulate = Color(0, 0.46958673, 0.46980506, 1)
 position = Vector2(1, -3)
 sprite_frames = SubResource("SpriteFrames_ekdex")
 autoplay = "default"
