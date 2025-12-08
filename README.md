@@ -1,11 +1,11 @@
-🎾 PickleBall Battle — A Pickleball-Inspired Action Adventure Built with Godot Engine
+🎾 PickleBall Champion — A Pickleball-Inspired Action Adventure Built with Godot Engine
 
-Welcome to PickleBall Battle, a fast-paced, skill-driven action–arcade adventure inspired by Pickleball Adventure and reimagined with original mechanics, environments, and progression systems.
+Welcome to PickleBall Champion, a fast-paced, skill-driven action–arcade adventure inspired by Pickleball Adventure and reimagined with original mechanics, environments, and progression systems.
 Developed entirely with the Godot Engine, this project blends responsive controls, physics-based gameplay, and a lighthearted visual style into a polished, replayable experience.
 
 🌟 Overview
 
-In PickleBall Battle, players step into a vibrant world where pickleball becomes the core of exploration, combat, and challenge-driven encounters.
+In PickleBall Champion, players step into a vibrant world where pickleball becomes the core of exploration, combat, and challenge-driven encounters.
 Designed for both casual players and mechanics-focused enthusiasts, the game emphasizes precision timing, ball control, mobility, and reactive AI behavior.
 
 🕹️ Core Features
@@ -44,7 +44,9 @@ Git (optional)
 
 Clone & Run
 https://github.com/MegnantPlus/Pickle-Ball.git
+
 cd your-repo-name
+
 godot .
 
 📸 Gameplay Preview
@@ -54,7 +56,8 @@ Add your assets here for maximum impact:
  Gameplay GIF showcasing core mechanics
 
  Screenshots of arenas, UI, and characters
-🗺️ Development Roadmap
+ 
+ 🗺️ Development Roadmap
 
  Expanded Adventure Mode with progression
 
@@ -71,8 +74,6 @@ Add your assets here for maximum impact:
 
 Contributions, feature suggestions, and bug reports are welcome!
 Feel free to open an Issue or submit a Pull Request.
-
-📜 License
 
 ❤️ Acknowledgments
 
