@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://btkm3kcqo4pqu"
-path="res://.godot/imported/Move.png-77cb4939ad065a6cfe7cbf90070e95a1.ctex"
+uid="uid://cf3t4w3njkaf0"
+path="res://.godot/imported/Guide_Point.png-a623e7b39c67aede32cd385e2664dfcc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game material/Move.png"
-dest_files=["res://.godot/imported/Move.png-77cb4939ad065a6cfe7cbf90070e95a1.ctex"]
+source_file="res://game material/Guide_Point.png"
+dest_files=["res://.godot/imported/Guide_Point.png-a623e7b39c67aede32cd385e2664dfcc.ctex"]
 
 [params]
 

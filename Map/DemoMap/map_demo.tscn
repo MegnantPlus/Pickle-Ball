@@ -1,13 +1,26 @@
 [gd_scene load_steps=11 format=4 uid="uid://bsoi6navw0y81"]
 
 [ext_resource type="Texture2D" uid="uid://clyphabmctkq" path="res://brackeys_platformer_assets/sprites/world_tileset.png" id="1_gvoxm"]
-[ext_resource type="Script" uid="uid://b26mowhmmq2up" path="res://Map/DemoMap/map_demo.gd" id="1_nit0h"]
 [ext_resource type="PackedScene" uid="uid://by2523p4ivtvd" path="res://PLayer/Player.tscn" id="2_o24m5"]
 [ext_resource type="Texture2D" uid="uid://bkc8k5c7uelv4" path="res://game material/Platform.png" id="2_vm5od"]
 [ext_resource type="PackedScene" uid="uid://ppvsylrn503a" path="res://SlimeBall/slime_ball.tscn" id="3_7yced"]
 [ext_resource type="Texture2D" uid="uid://byen65akhcqsh" path="res://game material/Nest.png" id="4_nbr5u"]
 [ext_resource type="PackedScene" uid="uid://jm8v8fpxvdkf" path="res://Components/aim_point.tscn" id="6_cwx86"]
 [ext_resource type="PackedScene" uid="uid://h8tr7650sg0b" path="res://Bot/Bot.tscn" id="8_bbwgn"]
+
+[sub_resource type="GDScript" id="GDScript_ibsat"]
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta: float) -> void:
+	pass
+"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o24m5"]
 texture = ExtResource("1_gvoxm")
@@ -178,7 +191,7 @@ physics_layer_0/collision_mask = 136
 sources/0 = SubResource("TileSetAtlasSource_o24m5")
 
 [node name="MapDemo" type="Node2D"]
-script = ExtResource("1_nit0h")
+script = SubResource("GDScript_ibsat")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(-640, -360)
@@ -186,18 +199,10 @@ tile_map_data = PackedByteArray("AAAAACgAAAAAAAAAAAAAACcAAAAAAAAAAAAAACYAAAAAAAA
 tile_set = SubResource("TileSet_7yced")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
 offset_left = -640.0
-offset_top = -360.5
+offset_top = -360.0
 offset_right = 640.0
-offset_bottom = 360.5
-grow_horizontal = 2
-grow_vertical = 2
-pivot_offset = Vector2(0, 0.5)
+offset_bottom = 360.0
 texture = ExtResource("2_vm5od")
 
 [node name="TextureRect2" type="TextureRect" parent="."]
