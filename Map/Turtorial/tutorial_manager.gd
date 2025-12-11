@@ -115,3 +115,7 @@ func on_target_hit():
 		else:
 			tutorial_label.text = "Try again! Use SHIFT!"
 			spawn_ball_practice()
+
+
+func _on_aim_point_target_hit() -> void:
+	pass # Replace with function body.

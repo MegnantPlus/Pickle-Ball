@@ -169,3 +169,5 @@ position = Vector2(3, -104)
 
 [node name="AimPoint" parent="MarkPoint" instance=ExtResource("8_f6ith")]
 position = Vector2(1, -199)
+
+[connection signal="target_hit" from="MarkPoint/AimPoint" to="." method="_on_aim_point_target_hit"]
