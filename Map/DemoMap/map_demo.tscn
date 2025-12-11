@@ -1,13 +1,13 @@
-[gd_scene load_steps=11 format=4 uid="uid://dgrrdyskgmec8"]
+[gd_scene load_steps=11 format=4 uid="uid://bsoi6navw0y81"]
 
 [ext_resource type="Texture2D" uid="uid://clyphabmctkq" path="res://brackeys_platformer_assets/sprites/world_tileset.png" id="1_gvoxm"]
-[ext_resource type="Script" uid="uid://b26mowhmmq2up" path="res://Map/map_demo.gd" id="1_nit0h"]
+[ext_resource type="Script" uid="uid://b26mowhmmq2up" path="res://Map/DemoMap/map_demo.gd" id="1_nit0h"]
 [ext_resource type="PackedScene" uid="uid://by2523p4ivtvd" path="res://PLayer/Player.tscn" id="2_o24m5"]
 [ext_resource type="Texture2D" uid="uid://bkc8k5c7uelv4" path="res://game material/Platform.png" id="2_vm5od"]
 [ext_resource type="PackedScene" uid="uid://ppvsylrn503a" path="res://SlimeBall/slime_ball.tscn" id="3_7yced"]
 [ext_resource type="Texture2D" uid="uid://byen65akhcqsh" path="res://game material/Nest.png" id="4_nbr5u"]
 [ext_resource type="PackedScene" uid="uid://jm8v8fpxvdkf" path="res://Components/aim_point.tscn" id="6_cwx86"]
-[ext_resource type="PackedScene" uid="uid://h8tr7650sg0b" path="res://Bot/Bot.tscn" id="7_sg2dq"]
+[ext_resource type="PackedScene" uid="uid://h8tr7650sg0b" path="res://Bot/Bot.tscn" id="8_bbwgn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o24m5"]
 texture = ExtResource("1_gvoxm")
@@ -220,13 +220,16 @@ collision_layer = 10
 collision_mask = 10
 
 [node name="AimPoint_ForPlayer" parent="." groups=["p1_aim"] instance=ExtResource("6_cwx86")]
-position = Vector2(-6, -298)
+position = Vector2(-4, -272)
 
 [node name="AimPoint_ForBot" parent="." groups=["bot_aim"] instance=ExtResource("6_cwx86")]
 position = Vector2(10, 274)
 
-[node name="Bot" parent="." instance=ExtResource("7_sg2dq")]
-position = Vector2(-237, -301)
-scale = Vector2(3, 3)
-
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="SpinPoint" parent="." groups=["spin_aim"] instance=ExtResource("6_cwx86")]
+position = Vector2(0, -152)
+
+[node name="Bot" parent="." instance=ExtResource("8_bbwgn")]
+position = Vector2(69, -260)
+scale = Vector2(2.0800006, 2.12)

@@ -1,0 +1,86 @@
+[gd_scene load_steps=7 format=3 uid="uid://w5v7d4nqu4ro"]
+
+[ext_resource type="Texture2D" uid="uid://bkc8k5c7uelv4" path="res://game material/Platform.png" id="1_34v14"]
+[ext_resource type="Texture2D" uid="uid://byen65akhcqsh" path="res://game material/Nest.png" id="2_o66it"]
+[ext_resource type="PackedScene" uid="uid://djmo1ntluxl4b" path="res://GetPointArea/get_point.tscn" id="2_t1uld"]
+[ext_resource type="PackedScene" uid="uid://ppvsylrn503a" path="res://SlimeBall/slime_ball.tscn" id="3_2kxfq"]
+[ext_resource type="PackedScene" uid="uid://by2523p4ivtvd" path="res://PLayer/Player.tscn" id="4_o66it"]
+[ext_resource type="PackedScene" uid="uid://h8tr7650sg0b" path="res://Bot/Bot.tscn" id="5_ta1l0"]
+
+[node name="Level1" type="Node2D"]
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_34v14")
+
+[node name="Camera2D" type="Camera2D" parent="UI"]
+
+[node name="TextureRect2" type="TextureRect" parent="UI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -258.0
+offset_top = -60.0
+offset_right = 382.0
+offset_bottom = 68.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_o66it")
+
+[node name="GetPointBox" type="Node2D" parent="."]
+
+[node name="GetPoint01" parent="GetPointBox" groups=["p2_point"] instance=ExtResource("2_t1uld")]
+position = Vector2(-0.9999995, -335)
+rotation = 1.5707964
+scale = Vector2(1, 60.160004)
+
+[node name="GetPoint02" parent="GetPointBox" groups=["p2_point"] instance=ExtResource("2_t1uld")]
+position = Vector2(-593, -179)
+scale = Vector2(1, 17.839998)
+
+[node name="GetPoint03" parent="GetPointBox" groups=["p2_point"] instance=ExtResource("2_t1uld")]
+position = Vector2(592, -180)
+scale = Vector2(1, 17.839998)
+
+[node name="GetPoint04" parent="GetPointBox" groups=["p1_point"] instance=ExtResource("2_t1uld")]
+position = Vector2(-2, 333)
+rotation = 1.5707964
+scale = Vector2(1, 60.160004)
+
+[node name="GetPoint05" parent="GetPointBox" groups=["p1_point"] instance=ExtResource("2_t1uld")]
+position = Vector2(-593, 180)
+scale = Vector2(1, 17.839998)
+
+[node name="GetPoint06" parent="GetPointBox" groups=["p1_point"] instance=ExtResource("2_t1uld")]
+position = Vector2(592, 179)
+scale = Vector2(1, 17.839998)
+
+[node name="PlayerAndBot" type="Node2D" parent="."]
+
+[node name="SlimeBall" parent="PlayerAndBot" instance=ExtResource("3_2kxfq")]
+position = Vector2(-75, 133)
+
+[node name="Player" parent="PlayerAndBot" instance=ExtResource("4_o66it")]
+position = Vector2(-84, 242)
+scale = Vector2(3, 3)
+
+[node name="Bot" parent="PlayerAndBot" instance=ExtResource("5_ta1l0")]
+position = Vector2(-80, -184)
+scale = Vector2(3, 3)

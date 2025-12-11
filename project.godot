@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Game"
-run/main_scene="uid://dgrrdyskgmec8"
+run/main_scene="uid://bsoi6navw0y81"
 config/features=PackedStringArray("4.5", "Forward Plus")
 boot_splash/show_image=false
 boot_splash/fullsize=false
@@ -22,6 +22,11 @@ window/size/viewport_width=1280
 window/size/viewport_height=720
 window/stretch/mode="canvas_items"
 window/handheld/orientation=4
+
+[global_group]
+
+p2_point=""
+p1_point=""
 
 [input]
 
@@ -63,3 +68,4 @@ hit={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+textures/vram_compression/import_etc2_astc=true
