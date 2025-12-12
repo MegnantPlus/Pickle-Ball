@@ -157,15 +157,13 @@ position = Vector2(-108, -252)
 scale = Vector2(3, 3)
 
 [node name="MarkPoint" type="Node2D" parent="."]
+visible = false
 
 [node name="p1Aim" parent="MarkPoint" groups=["p1_aim"] instance=ExtResource("7_ta1l0")]
-visible = false
 position = Vector2(1, -261)
 
 [node name="p2Aim" parent="MarkPoint" groups=["bot_aim"] instance=ExtResource("7_ta1l0")]
-visible = false
 position = Vector2(3, 226)
 
 [node name="spinAim" parent="MarkPoint" groups=["spin_aim"] instance=ExtResource("7_ta1l0")]
-visible = false
 position = Vector2(3, -104)
